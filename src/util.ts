@@ -7,7 +7,10 @@ export function _filterVersion(stdmsg: string): string {
 }
 
 export function _readFile(path: string, usrOpts: object): Promise<string> {
-  const opts = {
+  const opts: {
+    encoding: 'ascii' | 'utf8' | 'utf-8' | 'utf16le' | 'ucs2' | 'ucs-2' | 'base64' | 'latin1' | 'binary' | 'hex';
+    lineEnding: string;
+  } = {
     encoding: 'utf8',
     lineEnding: '\n'
   };
